@@ -53,7 +53,7 @@ public class Sector {
     public void setSecondaryTreasure(boolean t) { secondaryTreasure = t; }
     public boolean isTrap() { return trap; }
     public void setTrap(boolean t) { trap = t; }
-    public boolean isEnemy() { return enemy; }
+    public boolean hasEnemy() { return enemy; }
     public void setEnemy(boolean e) { enemy = e; }
     public boolean isObstacle() { return obstacle; }
     public void setObstacle(boolean o) { obstacle = o; }

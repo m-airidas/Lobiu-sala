@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static com.treasure.GameConfig.BONUS_ATTACK;
+import static com.treasure.GameConfig.COMBAT_WIN_CHANCE;
+
 public class Player {
     private final String name;
     private int lives;
@@ -63,7 +66,7 @@ public class Player {
         double bonus = 0.0;
         for (TeamMemberType t : teamMembers) {
             if (t == TeamMemberType.ŠUO) {
-                bonus += 0.15;
+                bonus += BONUS_ATTACK;
             }
         }
         return bonus;
@@ -94,7 +97,7 @@ public class Player {
     }
 
     public boolean combatWin() {
-        double base = 0.6;
+        double base = COMBAT_WIN_CHANCE;
         double bonus = getCombatBonus();
         double chance = Math.min(0.95, base + bonus);
         return rand.nextDouble() < chance;
